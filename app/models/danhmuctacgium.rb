@@ -1,0 +1,2 @@
+class Danhmuctacgium < ApplicationRecord
+end

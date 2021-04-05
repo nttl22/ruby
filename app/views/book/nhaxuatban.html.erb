@@ -1,0 +1,103 @@
+<div class="container">
+    <h2>Nhà xuất bản </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ten nxb</th>
+                <th scope="col">Dia chi</th>
+                <th scope="col">email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @nhaxuatban %>
+            <% @nhaxuatban.each do |item| %>
+            <tr>
+                <th scope="row"><%= item.id %></th>
+                <td><%= item.tennxb %></td>
+                <td><%= item.diachi %></td>
+                <td><%= item.email %></td>
+            </tr>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Thể loại sách </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ten the loai</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @theloaisach %>
+            <% @theloaisach.each do |item| %>
+            <tr>
+                <th scope="row"><%= item.id %></th>
+                <td><%= item.tentheloai %></td>
+            </tr>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Danh mục tác giả </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ten tac gia</th>
+                <th scope="col">website</th>
+                <th scope="col">ghichu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @danhmuctacgia %>
+            <% @danhmuctacgia.each do |item| %>
+            <tr>
+                <th scope="row"><%= item.id %></th>
+                <td><%= item.tentacgia %></td>
+                <td><%= item.website %></td>
+                <td><%= item.ghichu %></td>
+            </tr>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Danh mục sách </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ten sach</th>
+                <th scope="col">nam xuat ban</th>
+                <th scope="col">the loai</th>
+                <th scope="col">nha xuat ban</th>
+                <th scope="col">danh muc tac gia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @danhmucsach %>
+            <% @danhmucsach.each do |item| %>
+            <tr>
+                <th scope="row"><%= item.id %></th>
+                <td><%= item.tensach %></td>
+                <td><%= item.namxuatban %></td>
+                <td><%= item.theloai.tentheloai %></td>
+                <td><%= item.nhaxuatban.tennxb %></td>
+                <td><%= item.danhmuctacgia.tentacgia %></td>
+            </tr>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>
